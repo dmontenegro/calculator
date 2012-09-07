@@ -8,6 +8,8 @@ function Main(){
     ;;
   "-")
     echo "Se resta" $1 "con" $3
+    echo "El resultado es : "
+    source Resta.sh $1 $3
   ;;
  "*")
     echo "Se multiplica" $1 " con " $3
