@@ -34,7 +34,7 @@ par3=$(dialog --title "Calculadora Interactiva" \
   "/")
     echo "Se divide" $par1 "con" $par3
     echo "el resultado es: "
-    ANSWER=$(source division.sh $1 $3)
+    ANSWER=$(source division.sh $par1 $par3)
   ;;
  esac
 
