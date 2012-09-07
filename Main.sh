@@ -1,4 +1,4 @@
-echo "hola"
+echo "hola bienvenido a calculadora"
 function Main(){
  case $2 in
   "+")
@@ -12,6 +12,7 @@ function Main(){
   ;;
   "/")
     echo "Se divide" $1 "con" $3
+    source division.sh $1 $3
   ;;
  esac
 }
