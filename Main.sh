@@ -1,27 +1,49 @@
-echo "hola bienvenido a calculadora"
 function Main(){
- case $2 in
+exec 3>&1
+par1=$(dialog --title "Calculadora Interactiva" \
+ --backtitle "Linux Para Ingenieria" \
+ --inputbox "Digite primer numero" 8 50 \
+2>&1 1>&3)
+
+par2=$(dialog --title "Calculadora Interactiva" \
+ --backtitle "Linux Para Ingenieria" \
+ --inputbox "Digite simbolo" 8 50 \
+2>&1 1>&3)
+
+par3=$(dialog --title "Calculadora Interactiva" \
+ --backtitle "Linux Para Ingenieria" \
+ --inputbox "Digite segundo numero " 8 50 \
+2>&1 1>&3)
+
+ case $par2 in
   "+")
-    echo "Se suma " $1 " con " $3
+    echo "Se suma " $par1 " con " $par3
     echo "El resultado es: "
-    source Suma.sh $1 $3
+    ANSWER=$(source Suma.sh $par1 $par3)
     ;;
   "-")
-    echo "Se resta" $1 "con" $3
+    echo "Se resta" $par1 "con" $par3
     echo "El resultado es : "
-    source Resta.sh $1 $3
+    ANSWER=$(source Resta.sh $par1 $par3)
   ;;
   "x")
-    echo "Se multiplica" $1 " con " $3
+    echo "Se multiplica" $par1 " con " $par3
     echo " el resultado es: "
-    source mult.sh $1 $3
+    ANSWER=$(source mult.sh $par1 $par3)
   ;;
   "/")
-    echo "Se divide" $1 "con" $3
+    echo "Se divide" $par1 "con" $par3
     echo "el resultado es: "
-    source division.sh $1 $3
+    ANSWER=$(source division.sh $1 $3)
   ;;
  esac
-}
-Main $1 $2 $3 
 
+dialog --title "Calculadora Interactiva" \
+ --backtitle "Linux Para Ingenieria" \
+ --infobox "$ANSWER" 3 34
+
+
+}
+ 
+
+Main
