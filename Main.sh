@@ -11,8 +11,10 @@ function Main(){
     echo "El resultado es : "
     source Resta.sh $1 $3
   ;;
- "*")
+  "x")
     echo "Se multiplica" $1 " con " $3
+    echo " el resultado es: "
+    source mult.sh $1 $3
   ;;
   "/")
     echo "Se divide" $1 "con" $3
