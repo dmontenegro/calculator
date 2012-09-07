@@ -3,7 +3,9 @@ function Main(){
  case $2 in
   "+")
     echo "Se suma " $1 " con " $3
-  ;;
+    echo "El resultado es: "
+    source Suma.sh $1 $3
+    ;;
   "-")
     echo "Se resta" $1 "con" $3
   ;;
@@ -12,6 +14,7 @@ function Main(){
   ;;
   "/")
     echo "Se divide" $1 "con" $3
+    echo "el resultado es: "
     source division.sh $1 $3
   ;;
  esac
