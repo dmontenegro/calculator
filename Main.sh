@@ -1,3 +1,4 @@
+#!/bin/bash
 function Main(){
 exec 3>&1
 par1=$(dialog --title "Calculadora Interactiva" \
